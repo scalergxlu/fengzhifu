@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="D:\fengzhifu\lib\mysql-connector-java-5.1.35.jar" />
+
+  <context id="CrowdTables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/agent"
+        userId="zhaiqingtong"
+        password="zhaiqingtong">
+    </jdbcConnection>
+
+    <javaModelGenerator targetPackage="feng.model" targetProject="E:\lianzhi\fengzhifuserver\fengzhifu\code\fengzhifuapp\src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="feng.mapper"  targetProject="E:\lianzhi\fengzhifuserver\fengzhifu\code\fengzhifuapp\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="feng.dao"  targetProject="E:\lianzhi\fengzhifuserver\fengzhifu\code\fengzhifuapp\src\main\java" >
+      <property name="enableSubPackages" value="true" />
+		<property name="rootInterface" value="org.pupilframework.dao.IBaseDao" />
+    </javaClientGenerator>
+
+    <table  tableName="staff" domainObjectName="Staff" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="Staff_id" sqlStatement="MySql" identity="true" />
+      <columnOverride column="staff_id" javaType="Long" />
+      <!--<columnOverride column="id" javaType="Long" />
+      <columnOverride column="user_id" javaType="Long" />
+      <columnOverride column="borrow_time" javaType="Long" />
+      <columnOverride column="borrow_time" javaType="Long" />
+      <columnOverride column="apply_time" javaType="Long" />-->
+
+    </table>
+    
+    
+  </context>
+</generatorConfiguration>

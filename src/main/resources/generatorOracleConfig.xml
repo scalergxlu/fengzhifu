@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="E:\lianzhi\MBGMAVEN\lib\ojdbc14-10.2.0.1.0.jar" />
+  <context id="extracttables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+        connectionURL="jdbc:oracle:thin:@192.168.0.111:1521:ORCL"
+        userId="itservice"
+        password="123">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    <javaModelGenerator targetPackage="its.model" targetProject="E:\lianzhi\MBGMAVEN\output">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="its.mapper"  targetProject="E:\lianzhi\MBGMAVEN\output">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="its.dao"  targetProject="E:\lianzhi\MBGMAVEN\output" >
+      <property name="enableSubPackages" value="true" />
+		<property name="rootInterface" value="its.dao.IBaseDao" />
+    </javaClientGenerator>
+
+    <!-- table schema="ngro" tableName="ng_deal" domainObjectName="Deal" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+      <columnOverride column="id" javaType="Long" />
+      <columnOverride column="REPAYTYPE"  javaType="Integer" />
+      <columnOverride column="AGENCY_STATUS"  javaType="Integer" />
+      <columnOverride column="WARRANT"  javaType="Integer" />
+      <columnOverride column="RISK_RANK"  javaType="Integer" />
+    </table-->
+
+     <table  tableName="it_veteran_cardre_info" domainObjectName="it_veteran_cardre_info" >
+    </table>
+  </context>
+</generatorConfiguration>
